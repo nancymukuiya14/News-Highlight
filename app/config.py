@@ -1,3 +1,5 @@
+import os
+
 class Config:
     '''
     General configuration parent class
@@ -5,7 +7,7 @@ class Config:
     pass
 NEWS_API_BASE_URL = 'https://newsapi.org/v2/sources?apiKey={}'
 NEWS_APIKEY = 'd0054354f7a3447581e739eb8be8abd4'
-NEWS_SECRET_KEY = 'secret'
+NEWS_SECRET_KEY = os.urandom(32)
 
 staticmethod
 def init_app(app):

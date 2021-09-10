@@ -6,3 +6,10 @@ class news_article ():
         self.news_image = news_image
         self.news_date = news_date
         self.news_author = news_author
+        
+        
+class news_source ():
+    def __init__(self, news_source_id, news_source_name, news_source_description):
+        self.news_source_id = news_source_id
+        self.news_source_name = news_source_name
+        self.news_source_description = news_source_description
