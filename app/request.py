@@ -3,7 +3,7 @@ from app.models import *
 
 api_key = None
 base_url = None
-article_url = None
+# article_url = None
 
 
 # Getting api key

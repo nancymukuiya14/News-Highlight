@@ -1,5 +1,6 @@
 import os
 
+
 class Config:
     '''
     General configuration parent class
@@ -10,7 +11,7 @@ NEWS_APIKEY = 'd0054354f7a3447581e739eb8be8abd4'
 NEWS_SECRET_KEY = os.urandom(32)
 
 staticmethod
-def init_app(app):
+def init_app():
     pass
 
 
@@ -33,3 +34,8 @@ class DevConfig(Config):
     '''
 
     DEBUG = True
+    
+config_options = {
+'development': DevConfig,
+'production': ProdConfig
+}

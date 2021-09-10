@@ -1,6 +1,8 @@
 from flask import render_template
-from .request import get_news_source, get_article
 from app import app
+from .request import get_news_source, get_article
+from flask import render_template
+
 
 @app.route('/')
 def index():
