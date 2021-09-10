@@ -1,11 +1,15 @@
 from flask import render_template
-from app import app
+from .requests import get_news_source, get_article
+from .models import News, Article
+import app
 
+@app.route('/')
+def index():
+    results = get_news_source()
+    return render_template('index.html', results = results)
 
-@app.route("/")
-def home():
-    return render_template('index.html')
-
-@app.route("/about/")
-def about():
-    return render_template('navbar.html')
+@app.route('/news/<id>')
+def news(id):
+    article = get_article(id)
+    print(article)
+    return render_template('article.html',article =article)
