@@ -1,15 +1,20 @@
-class news_article ():
-    def __init__(self, news_id, news_title, news_content, news_image, news_date, news_author):
-        self.news_id = news_id
-        self.news_title = news_title
-        self.news_content = news_content
-        self.news_image = news_image
-        self.news_date = news_date
-        self.news_author = news_author
-        
-        
-class news_source ():
-    def __init__(self, news_source_id, news_source_name, news_source_description):
-        self.news_source_id = news_source_id
-        self.news_source_name = news_source_name
-        self.news_source_description = news_source_description
+class News:
+    def __init__(self,id,name,description,url,category,language,country):
+        self.id =id
+        self.name = name
+        self.description = description
+        self.url = url
+        self.category = category
+        self.language = language
+        self.country = country
+
+class Articles:
+    def __init__(self,id,author,title,description,url,urlToImage,publishedAt,content):
+        self.id = id
+        self.author = author
+        self.title = title
+        self.description = description
+        self.url = url
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
+        self.content = content
