@@ -1,14 +1,16 @@
+{% import 'macros.html' as macro %}
+{% extends 'base.html' %}
+{% block content %}
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the KTN News</title>
-        {% endif %}
-    </head>
+<html lang="en" dir="ltr">
+  <head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
     <body>
-
-    </body>
+    <div class="container-fluid" id="content">
+      <div class="row">
+          {{macro.News(results)}}
+      </div>
+    </div>
+  </body>
 </html>
