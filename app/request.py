@@ -49,10 +49,10 @@ def process_results(news_results_list):
 
 
 def get_article(id):
-    get_article_url = article_url.format(id)
+    get_article_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey=d0054354f7a3447581e739eb8be8abd4'.format(id)
 
     article_result= None
-    with urllib.request.urlopen(get_article_url+api_key) as url:
+    with urllib.request.urlopen(get_article_url) as url:
         get_article_data = url.read()
         get_article_response = json.loads(get_article_data)
         print (get_article_data)
@@ -75,6 +75,6 @@ def process_article(article_list):
             publishedAt = article.get('piblishedAt')
             content = article.get('content')
             if urlToImage:
-                article_result =article(id, author,title, description,url,urlToImage,publishedAt,content)
+                article_result =Articles(id, author,title, description,url,urlToImage,publishedAt,content)
                 article_response.append(article_result)
     return article_response
