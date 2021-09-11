@@ -73,38 +73,42 @@ def process_article(article_list):
             url = article.get('url')
             urlToImage = article.get('urlToImage')
             publishedAt = article.get('piblishedAt')
-            content = article.get('content')
             if urlToImage:
-                article_result =Articles(id, author,title, description,url,urlToImage,publishedAt,content)
+                article_result =Articles(id, author,title, description,url,urlToImage,publishedAt)
                 article_response.append(article_result)
     return article_response
 
-def get_articles(category):
-    get_article_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey=d0054354f7a3447581e739eb8be8abd4'.format(category)
 
-    article_result= None
-    with urllib.request.urlopen(get_article_url) as url:
-        get_article_data = url.read()
-        get_article_response = json.loads(get_article_data)
-        print (get_article_data)
-        if get_article_response['articles']:
-            article_list = get_article_response['articles']
-            article_result = process_article(article_list)
+def get_articles_category(category):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category={}&apiKey={}'.format(
+        category, api_key)
+    # get_articles_url = base_url_articles.format(source_id, api_key)
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        # load the data into a json object
+        get_articles_response = json.loads(get_articles_data)
 
-    return article_result
-def process_results(article_list):
-    news_results= []
-    for news_item in article_list:
+        articles_results = None
 
-        id = news_item.get('id')
-        name = news_item.get('name')
-        description = news_item.get('description')
-        url = news_item.get('url')
-        category = news_item.get('category')
-        language = news_item.get('language')
-        country = news_item.get('country')
+        if get_articles_response['articles']:
+            articles_results_list = get_articles_response['articles']
+            articles_results = process_results_articles(articles_results_list)
+    return articles_results  # return the results
 
-        if name:
-            news_object =Articles(id, name, description,url,category,language,country)
-            news_results.append(news_object)
-    return news_results
+def process_results_articles (articles_results_list):
+    articles_results = []
+    for article in articles_results_list:
+        id = article.get('id')
+        author = article.get('author')
+        title = article.get('title')
+        description = article.get('description')
+        url = article.get('url')
+        urlToImage = article.get('urlToImage')
+        publishedAt = article.get('piblishedAt')
+        if urlToImage:
+            article_object = Articles(id, author,title, description,url,urlToImage,publishedAt)
+            articles_results.append(article_object)
+    return articles_results

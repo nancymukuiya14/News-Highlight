@@ -1,6 +1,6 @@
 from flask import render_template
 from . import main
-from ..request import get_news_source, get_article , get_articles
+from ..request import get_news_source, get_article
 
 
 @main.route('/')
@@ -14,8 +14,3 @@ def news(id):
     print(article)
     return render_template('article.html',article =article)
 
-@main.route('/entertainment')
-def entertainment():
-    entertainment = get_articles('entertainment-weekly')
-    
-    return render_template('entertainment.html',article =entertainment)

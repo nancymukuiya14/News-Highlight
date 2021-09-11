@@ -2,9 +2,9 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container">
-        {{ macro.Article(article) }}
-    </div>
+        {{macro.get_articles}}
     <div class="container-fluid" id="content">
             {{macro.get_news_source(results)}}
+        </div>
     </div>
 {% endblock %}
