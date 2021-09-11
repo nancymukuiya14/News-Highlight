@@ -14,10 +14,22 @@
 * git
 * pip
 
+## Technologies used.
+* Python
+* HTML
+* CSS
+* Bootstrap
+## known Bugs
+Thankfully i have no bugs.
+## Live link
+
+## Images.
+
 ## Contact Information.
 Incase you have any questions or you would want to work with me contact me via:
 Twitter:@mukuiyakigotho
 Instagram:@hey_its_nancy
 Email:nancykigotho14@gmail.com
 Telephone:0705814086 
-## Technologies
+## License
+MIT licence
