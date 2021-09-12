@@ -21,3 +21,7 @@ def category(category):
     article = get_articles_category(category)
     print(article)
     return render_template('category.html')
+@main.route('/business')
+def business():
+    articles = get_articles_category('business')
+    return render_template('business.html', articles = articles)
