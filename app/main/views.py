@@ -29,7 +29,7 @@ def business():
 def sports():
     articles = get_articles_category('sports')
     return render_template('sports.html', articles = articles)
-@main.route('/health')
-def health():
-    articles = get_articles_category('health')
-    return render_template('health.html', articles = articles)
+@main.route('/science')
+def science():
+    articles = get_articles_category('science')
+    return render_template('science.html', articles = articles)
