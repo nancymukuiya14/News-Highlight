@@ -25,3 +25,11 @@ def category(category):
 def business():
     articles = get_articles_category('business')
     return render_template('business.html', articles = articles)
+@main.route('/sports')
+def sports():
+    articles = get_articles_category('sports')
+    return render_template('sports.html', articles = articles)
+@main.route('/health')
+def health():
+    articles = get_articles_category('health')
+    return render_template('health.html', articles = articles)

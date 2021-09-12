@@ -1,0 +1,12 @@
+{% import 'macro.html' as macro %}
+{% extends 'base.html' %}
+
+{% block content%}
+
+<div class="container">
+    <div class="row">
+        {{macro.get_articles_category(articles)}}
+    </div>
+</div>
+
+{% endblock%}

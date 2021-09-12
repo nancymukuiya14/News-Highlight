@@ -19,6 +19,7 @@
 {% macro get_news_source(news_results) %}
 {% for result in news_results %}
 
+
 <a href="/news/{{result.id}}" class="btn btn-primary mb-2">{{result.name}}</a>
 
 {% endfor %}
@@ -28,7 +29,7 @@
 {% for article in article_result %}
 
 <div class="col-md-4 mb-2 mt-2">
-  <div class="card" style="width: 18rem;height: 450px;box-shadow: 10px 10px 5px -5px rgba(240,237,237,0.75);">
+  <div class="card" style="width: 18rem;height: 480px;box-shadow: 10px 10px 5px -5px rgba(240,237,237,0.75);">
     <img src="{{article.urlToImage}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{article.publisedAt}}</h5>
